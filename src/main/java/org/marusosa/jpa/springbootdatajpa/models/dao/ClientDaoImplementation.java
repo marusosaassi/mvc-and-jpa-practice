@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import java.util.List;
-@Repository
+@Repository//("clientDaoJPA")
 public class ClientDaoImplementation implements ClientDaoInterface{
     @PersistenceContext
     private EntityManager em;
