@@ -19,4 +19,11 @@ public class ClientDaoImplementation implements ClientDaoInterface{
     public List<Client> findAll() {
         return em.createQuery("from Client").getResultList();
     }
+
+    @Override
+    @Transactional
+    public void save(Client client) {
+        em.persist(client);
+        //takes the client object and saves it into the jpa context
+    }
 }
