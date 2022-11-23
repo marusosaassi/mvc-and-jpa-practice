@@ -1,5 +1,7 @@
 package org.marusosa.jpa.springbootdatajpa.models.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,12 +20,13 @@ public class Client implements Serializable {
 
     @Column(name = "created_at")
     @Temporal(TemporalType.DATE) //date format in the db
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     private Date createdAt;
 
-    @PrePersist //it is called automatically before inserting some register in the db
+    /*@PrePersist //it is called automatically before inserting some register in the db
     public void prePersist(){ //before saving in db
         createdAt = new Date();
-    }
+    }*/
     public Long getId() {
         return id;
     }
