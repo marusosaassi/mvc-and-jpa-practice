@@ -20,6 +20,10 @@ public class Client implements Serializable {
     @Temporal(TemporalType.DATE) //date format in the db
     private Date createdAt;
 
+    @PrePersist //it is called automatically before inserting some register in the db
+    public void prePersist(){ //before saving in db
+        createdAt = new Date();
+    }
     public Long getId() {
         return id;
     }
